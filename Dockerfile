@@ -27,6 +27,8 @@ COPY pom.xml resource-managers/kubernetes/core/pom.xml
 
 RUN ./dev/make-distribution.sh --name custom-spark --pip --tgz -Phadoop-2.7 -Pkubernetes
 
+RUN pip install python/dist/pyspark-2.4.4.tar.gz
+
 ENV GRANT_SUDO yes
 USER root
 RUN apt update
