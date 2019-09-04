@@ -1,0 +1,5 @@
+FROM docker.artifactory.enigma.com/hackathon/pyspark-2.4.4-rc4:latest
+
+RUN mkdir /tmp/code
+COPY test_spark.py /tmp/code/
+

@@ -45,5 +45,10 @@ RUN rm -r /root/.cache
 COPY python/lib ${SPARK_HOME}/python/lib
 ENV PYTHONPATH ${SPARK_HOME}/python/lib/pyspark.zip:${SPARK_HOME}/python/lib/py4j-*.zip
 
+RUN mkdir -p /code
+WORKDIR /code
+
+ADD test_spark.py .
+
 WORKDIR /opt/spark/work-dir
 ENTRYPOINT [ "/opt/entrypoint.sh" ]
